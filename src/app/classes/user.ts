@@ -23,7 +23,7 @@ export class User {
     public verifyUser(user:string, pass:string) {
         try {
             this.validateUser(user);
-            this.validatePassword(this.password);
+            this.validatePassword(pass);
         }
         catch(e) {
             console.log("Error: " + e);
@@ -44,6 +44,7 @@ export class User {
 
     private validatePassword(password:string) :boolean {
         let flag:boolean = false;
+        console.log(password);
         if(password.length < 8) {
             throw new Error("Password inválida");
         }

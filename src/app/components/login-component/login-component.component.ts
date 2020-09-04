@@ -10,7 +10,9 @@ export class LoginComponentComponent implements OnInit {
 
   private _user:User;
 
-  constructor() { }
+  constructor() {
+    this._user = new User();
+   }
 
   ngOnInit(): void {
   }
@@ -18,8 +20,13 @@ export class LoginComponentComponent implements OnInit {
   /**
      * login
      */
-    public login(user:string, password:string) {
-      this._user.verifyUser(user, password);
+    public login() {
+      let username:string;
+      let password:string;
+
+      username = (document.getElementById('user') as HTMLInputElement).value;
+      password = (document.getElementById('pass') as HTMLInputElement).value;
+      this._user.verifyUser(username, password);
   }
 
 }
