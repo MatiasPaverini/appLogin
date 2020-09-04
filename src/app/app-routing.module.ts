@@ -6,9 +6,23 @@ import { LandingComponent } from "./components/landing/landing.component";
 import { ErrorComponent } from "./components/error/error.component";
 
 const routes: Routes = [
-  {path: 'bienvenida', component: LandingComponent},
-  {path: 'login', component: LoginComponentComponent},
-  {path: '**', component: ErrorComponent}
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
+  },
+  {
+    path: 'bienvenida',
+    component: LandingComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponentComponent
+  },
+  {
+    path: '**',
+    component: ErrorComponent
+  }
 ];
 
 @NgModule({
